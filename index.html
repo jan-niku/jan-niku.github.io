@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>White Page with "foo"</title>
+    <title>testing page</title>
     <style>
+        h1 {
+            text-align: center;
+        }
         body {
             background-color: white;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
@@ -14,9 +18,53 @@
             font-size: 24px;
             color: black;
         }
+        img {
+            margin-bottom: 10px; /* Add some spacing between the image and the link */
+            max-width: 200%; /* Scale the image width proportionally */
+            max-height: 600px; /* Set the maximum height of the image */
+        }
+        .abstract-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            margin-bottom: 20px;
+        }
+        .abstract-box {
+            background-color: lightgray;
+            padding: 10px;
+            margin-right: 10px;
+            max-width: 40%; /* Set the maximum width of the box */
+            max-height: 600px; /* Set the maximum height of the box */
+            overflow: auto; /* Add scrollbars if the content overflows */
+        }
     </style>
 </head>
 <body>
-    <div>foo</div>
+    <h1>My Name</h1>
+    <h2>SIR on a Network</h2>
+    <div class="abstract-container">
+        <div class="abstract-box">
+            <p>Abstract – A fundamental component of epidemiological
+                modeling, the continuous SIR model, attempts to model
+                the spread of a contagion using systems of differential
+                equations. These base models rely on an assumption of full,
+                constant interaction between individuals. This assumption
+                may poorly reflect more sparse interaction networks. As
+                literature suggests that small-world networks are good
+                approximations of human relations, we expand SIR to
+                these networks. We compare peak infections of continuous
+                SIR models to those predicted by simulations on small
+                world networks with varying degrees of node clustering.
+                We then minimize a cost function comparing infection
+                peaks between these two models by varying the infection
+                rate in the continuous SIR. We show a compensatory
+                factor exists for this infection rate, allowing infections
+                in a network to be approximated using a much simpler
+                continuous model.</p>
+        </div>
+        <img src="./simple_network_sir2.gif">
+    </div>
+    <a href="network.html">Network SIR</a>
 </body>
 </html>
