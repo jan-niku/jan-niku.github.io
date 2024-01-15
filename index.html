@@ -3,92 +3,86 @@
 <head>
     <title>Project Page</title>
     <style>
-        h1 {
-            text-align: center;
-        }
         body {
             background-color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
             color: black;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
-        img {
-            margin-bottom: 10px; /* Add some spacing between the image and the link */
-            max-width: 200%; /* Scale the image width proportionally */
-            max-height: 600px; /* Set the maximum height of the image */
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5em;
+        }
+        .link-title {
+            color: blue;
+            text-decoration: none;
+            margin-top: 1em;
+            display: inline-block; /* Needed to apply margin-bottom */
+            margin-bottom: 0.5em;
+        }
+        .link-title:hover {
+            text-decoration: underline;
         }
         .abstract-container {
             display: flex;
-            flex-direction: row;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            margin-bottom: 20px;
+            flex-direction: row; /* Ensure flex items are laid out in a row */
+            align-items: flex-start; /* Align items to the start of the cross axis */
+            justify-content: space-between; /* Space out the flex items */
+            flex-wrap: nowrap; /* Prevent wrapping */
+            margin-bottom: 20px; /* Added margin for spacing between sections */
         }
         .abstract-box {
             background-color: lightgray;
-            padding: 10px;
-            margin-right: 10px;
-            max-width: 40%; /* Set the maximum width of the box */
-            max-height: 600px; /* Set the maximum height of the box */
-            overflow: auto; /* Add scrollbars if the content overflows */
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: auto;
+            flex: 1; /* Flex grow */
+            margin-right: 20px; /* Add some space between the text box and the image */
+        }
+        img {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 10px;
+            max-width: 50%; /* Limit image width to 50% of the container */
+            height: auto;
+            flex: 1; /* Flex grow */
+        }
+        @media (max-width: 1200px) {
+            .abstract-container {
+                flex-direction: column; /* Stack them on smaller screens */
+            }
+            .abstract-box, img {
+                width: 100%;
+                max-width: 100%;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
     <h1>Brendan Stewart Project Page</h1>
-    <h2>SIR on a Network</h2>
+    
+    <a class="link-title" href="network.html"><h2>SIR on a Network</h2></a>
     <div class="abstract-container">
         <div class="abstract-box">
-            <p>Abstract – A fundamental component of epidemiological
-                modeling, the continuous SIR model, attempts to model
-                the spread of a contagion using systems of differential
-                equations. These base models rely on an assumption of full,
-                constant interaction between individuals. This assumption
-                may poorly reflect more sparse interaction networks. As
-                literature suggests that small-world networks are good
-                approximations of human relations, we expand SIR to
-                these networks. We compare peak infections of continuous
-                SIR models to those predicted by simulations on small
-                world networks with varying degrees of node clustering.
-                We then minimize a cost function comparing infection
-                peaks between these two models by varying the infection
-                rate in the continuous SIR. We show a compensatory
-                factor exists for this infection rate, allowing infections
-                in a network to be approximated using a much simpler
-                continuous model.</p>
+            <p>A fundamental component of epidemiological modeling, the continuous SIR model, attempts to model the spread of a contagion using systems of differential equations. These base models rely on an assumption of full, constant interaction between individuals. This assumption may poorly reflect more sparse interaction networks. As literature suggests that small-world networks are good approximations of human relations, we expand SIR to these networks. We compare peak infections of continuous SIR models to those predicted by simulations on small world networks with varying degrees of node clustering. We then minimize a cost function comparing infection peaks between these two models by varying the infection rate in the continuous SIR. We show a compensatory factor exists for this infection rate, allowing infections in a network to be approximated using a much simpler continuous model.</p>
         </div>
-        <img src="./simple_network_sir2.gif">
+        <img src="./simple_network_sir2.gif" alt="Network SIR Model Simulation">
     </div>
-    <a href="network.html">Network SIR</a>
-
-    <h2>Human-like Harmony in Birds</h2>
-    <div class = "abstract container">
-        <div class = "abstract box">
-            <p>Abstract – A fundamental component of epidemiological
-                modeling, the continuous SIR model, attempts to model
-                the spread of a contagion using systems of differential
-                equations. These base models rely on an assumption of full,
-                constant interaction between individuals. This assumption
-                may poorly reflect more sparse interaction networks. As
-                literature suggests that small-world networks are good
-                approximations of human relations, we expand SIR to
-                these networks. We compare peak infections of continuous
-                SIR models to those predicted by simulations on small
-                world networks with varying degrees of node clustering.
-                We then minimize a cost function comparing infection
-                peaks between these two models by varying the infection
-                rate in the continuous SIR. We show a compensatory
-                factor exists for this infection rate, allowing infections
-                in a network to be approximated using a much simpler
-                continuous model.</p>
+    
+    <a class="link-title" href="foo.html"><h2>Human-like Harmony in Birds</h2></a>
+    <div class="abstract-container">
+        <div class="abstract-box">
+            <p>Can birds sing like humans? Are some birdsongs more melodic? Intrigued by PAPER HERE, we sought to reproduce then reapproach the results. An attribute of human musical scales and notes is the presence of overtones: a selection of notes which are multiples of some base frequency. We used Fourier transforms to extract frequencies present in bird records, requiring well-isolated frequency-space 'peaks' to identify well-represented notes, and reject sliding or unclear components of songs. We then attempted to describe present notes by assuming they are well-described as overtones of some fundamental, to-be-determined frequency. We search for the best fundamental frequency using the error of existing notes from the closest overtone. We were able to confirm the results of the paper: thrushes are unusually 'melodic', with a preference for overtones.</p>
         </div>
-        <img src="./finding_F0.gif">
-        <a href = "foo.html">placeholder</a>
+        <img src="./finding_F0.gif" alt="Birdsong Fundamental Frequency Analysis">
+    </div>
+
 </body>
 </html>
